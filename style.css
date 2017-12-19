@@ -7,3 +7,12 @@ canvas {
   display: block;
   margin: 0 auto;
 }
+
+h1 {
+	color:white;
+	text-align: center;
+}
+
+p {
+	color:white;
+}

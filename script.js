@@ -1,7 +1,10 @@
+
 window.onload = function()
 {
+    /* HAND SIPNNER */
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
+    var select = document.getElementById('select');
     var step = 2 * Math.PI / 360;
     var radius = 120;
 
@@ -9,8 +12,12 @@ window.onload = function()
     let angle = 0;
     let speed = 5;
 
-    ctx.strokeStyle = '#FA8072';
+    ctx.strokeStyle = select.value;
     ctx.lineWidth = radius / 5.5;
+
+    select.addEventListener('change', function() {
+        ctx.strokeStyle = select.value;
+    });
 
     canvas.addEventListener('mousedown', ({clientX, clientY}) => {
       dragStart = {clientX, clientY}
@@ -76,6 +83,5 @@ window.onload = function()
       
       window.requestAnimationFrame(render)
     }
-
-    render()
+    render();
 }
